@@ -146,15 +146,3 @@ rest.post_json("https://signal.example.com/answer", { from = "B", to = "A", sdp 
 ## License
 
 MIT — adapt and reuse freely.
-
----
-
-## Contact / next steps
-
-If you want, I can:
-
-* add a WebSocket adapter example to the same file,
-* provide a small signaling server (Lua/Node) plus a browser WebRTC client demo,
-* or convert this into a LuaRocks-compatible package with tests.
-
-Tell me which enhancement you want next.
