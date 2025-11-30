@@ -146,3 +146,5 @@ rest.post_json("https://signal.example.com/answer", { from = "B", to = "A", sdp 
 ## License
 
 MIT — adapt and reuse freely.
+
+*End of v1.1.0 notes.*
