@@ -266,7 +266,12 @@ local function request(method, path_or_url, opts)
         M.config.logger("rate_limited", host)
         -- wait then continue to next server or attempt
         local wait = backoff(attempt)
-        if ngx then ngx.sleep(wait) else if socket then socket.sleep(wait) end
+        -- FIXED: used 'elseif' instead of 'else if' to close the block correctly
+        if ngx then 
+          ngx.sleep(wait) 
+        elseif socket then 
+          socket.sleep(wait) 
+        end
         goto next_server
       end
 
@@ -292,7 +297,12 @@ local function request(method, path_or_url, opts)
     end
 
     local wait = backoff(attempt)
-    if ngx then ngx.sleep(wait) else if socket then socket.sleep(wait) end
+    -- FIXED: used 'elseif' instead of 'else if' to close the block correctly
+    if ngx then 
+      ngx.sleep(wait) 
+    elseif socket then 
+      socket.sleep(wait) 
+    end
   end
 end
 
@@ -461,3 +471,4 @@ M._internal = {
 }
 
 return M
+
